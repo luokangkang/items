@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>专属相册</title>
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="css/banner.css"/>
+</head>
+<body>
+    <script>
+        function setFontSize(){
+            var doc = document,
+                    width = doc.documentElement.clientWidth;
+            doc.documentElement.style.fontSize=(width / 320 * 100) + "px";
+        }
+        setFontSize();
+    </script>
+
+    <!-- 头部-->
+    <div class="header">
+        <a href="javascript:void (0)" class="headerLeft"></a>
+        <h2>专属相册</h2>
+        <a href="javascript:alert('目前还没有开通')" class="headerRight"></a>
+        <ul class="headerOul">
+            <li><a href="index.html">我的首页</a></li>
+            <li><a href="javascript:alert('正在开发中')">我的秘密</a></li>
+            <li><a href="javascript:alert('正在开发中')">我的相册</a></li>
+            <li><a href="javascript:alert('正在开发中')">我的视频</a></li>
+            <li><a href="javascript:alert('正在开发中')">我的设置</a></li>
+        </ul>
+    </div>
+
+    <!-- 轮播图-->
+    <div class="nav">
+        <!-- 遮罩层-->
+        <div class="cory"></div>
+        <div id="wrapper" class="wrapper"></div>
+    </div>
+
+    <!-- 主体-->
+    <div class="main">
+        <div class="mainOne"><img src="img/img1.jpg" alt=""/></div>
+        <div class="mainOne"><img src="img/img1.jpg" alt=""/></div>
+    </div>
+
+    <script src="js/jquery-3.1.1.js"></script>
+    <script src="js/banner.min.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+        $(function(){
+            setTimeout(function(){
+                $(".cory").css({"display": "none"});
+                $(".wrapper").css({"display": "block"});
+            },1000);
+            $(".mainOne").on("touchend",function(){
+                location.href="login.html";
+            })
+        });
+
+        Banner.start({
+            id: "wrapper",         // 字符串，占位容器的id
+            width: "1920",        // 数值，图片宽度
+            height: "1280",       // 数值，图片高度
+            src: ["img/psb1.jpg", "img/psb2.jpg", "img/psb3.jpg", "img/psb4.jpg", "img/psb5.jpg"],        // 字符串，图片路径
+            link: [],       // 字符串，点击图片的链接地址
+            autoMove: {
+                flag: true, // 布尔，是否自动播放
+                wait: 1000  // 数值，下次播放前等待时间
+            },
+            color: ["pink", "#fff"]       // 字符串，第一个元素值为当前legend的背景
+            //         第二个元素值为其它legend的背景
+        })
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,43 @@
+ul{margin: 0;padding: 0;}
+li{list-style-type: none;}
+a{text-decoration: none;}
+#wrapper{
+	width: 100%;
+	overflow: hidden;
+	position: relative; /* or absolute */
+	background: #fff;
+}
+#wrapper ul{
+	width: 600%;        /* 5张图片就设500% */
+	height: 100%;
+}
+#wrapper a{
+	height: 100%;
+	float: left;
+	background: url("../img/psb1.jpg") no-repeat 50% 50%;
+
+}
+#wrapper a img{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+#wrapper p{
+	margin: 0 0 0 -0.45rem; /* 改变legend居中设置 */
+	padding: 0;
+	position: absolute;
+	left: 50%;
+	bottom: 0.05rem;;
+}
+#wrapper p span{
+	display: inline-block;
+	width: 0.1rem;
+	height: 0.1rem;
+	background: #fff;
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
+	-o-border-radius: 100%;
+	border-radius: 100%;
+	float: left;
+	margin-left: 0.1rem;
+}
